@@ -1,0 +1,20 @@
+{
+  "name": "query-parser",
+  "version": "0.1.0",
+  "description": "A Simple Query Parser",
+  "main": "index.mjs",
+  "scripts": {
+    "build": "peggy --format=es -o lib/parser.mjs src/parser.pegjs",
+    "test": "st -spec ./tests/index.mjs"
+  },
+  "keywords": [
+    "parser",
+    "query"
+  ],
+  "author": "Jerry Sievert <code@legitimatesounding.com>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "peggy": "^2.0.1",
+    "st": "https://github.com/JerrySievert/st.git"
+  }
+}
