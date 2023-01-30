@@ -33,8 +33,8 @@ String
   / UnquotedString
 
 QuotedString "quoted string"
-  = _ str:('"'[a-zA-Z.\s0-9_;,$#%']+ '"') { return str[1].join(''); }
-  / _ str:("'"[a-zA-Z.\s0-9_;,$#%"]+ "'") { return str[1].join(''); }
+  = _ str:('"'[a-zA-Z.\(\)\[\]\s0-9_;,$#%:']+'"') { return str[1].join(''); }
+  / _ str:("'"[a-zA-Z.\(\)\[\]\s0-9_;,$#%:"]+"'") { return str[1].join(''); }
 
 UnquotedString "unquoted string"
   = str:([a-zA-Z_][a-zA-Z0-9._]*) { return str[0] + str[1].join(''); }
